@@ -33,7 +33,27 @@
         <hr>
         <p>SELECT a.*, b.nome_mot, b.sexo_mot FROM caranga as a INNER JOIN motora as b WHERE a.marca_veic = 'CHEVROLET' AND b.cod_veic = a.id_veic</p>
         <img src="./img/print5.png" alt="print5">
-
+       <hr>
+       <p>Na criação do banco de dados foi usado os seguintes comandos</p>
+       <hr>
+       <p>Create DataBase davipola;</p>
+       <hr>
+       <p>CREATE TABLE caranga (<br>
+        id_veic int not null AUTO_INCREMENT,<br>
+            marca_veic varchar(100),<br>
+            modelo_veic varchar(50),<br>
+            ano_veic year,<br>
+            placa_veic varchar(50),<br>
+            PRIMARY KEY(id_veic) );</p>
+        <hr>
+        <p>CREATE TABLE motora (<br>
+            id_mot int not null AUTO_INCREMENT,<br>
+                nome_mot varchar(100),<br>
+                cod_veic int, <br>
+                datanasc_mot date, <br>
+                sexo_mot ENUM("M","F"), <br>
+                PRIMARY KEY(id_mot), <br>
+                FOREIGN KEY(cod_veic) REFERENCES caranga(id_veic));</p>
 
     </section>
 </div>
